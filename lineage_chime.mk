@@ -13,13 +13,18 @@ $(call inherit-product, device/xiaomi/chime/device.mk)
 
 # Inherit some common RiceDroid Flags.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-RICE_MAINTAINER := @rktdnt
-RICE_OFFICIAL := true
+
 TARGET_SUPPORTS_QUICK_TAP := true
-#WITH_GMS := true
 TARGET_GAPPS_ARCH := arm64
-TARGET_ENABLE_BLUR := true
+TARGET_ENABLE_BLUR := false
 TARGET_FACE_UNLOCK_SUPPORTED := true
+# Gapps
+TARGET_GAPPS_ARCH := arm64
+WITH_GMS := true
+
+# Gcamgo
+PRODUCT_PACKAGES += \
+    GCamGOPrebuilt-V3
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := lineage_chime
